@@ -169,6 +169,11 @@ a {
   }
 
 
+  .main {
+    float: right;
+    width: 90%;
+  }
+
 
 @media (max-width: 600px) {
     nav, article {

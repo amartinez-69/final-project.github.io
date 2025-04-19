@@ -81,7 +81,7 @@ li a:hover {
 article {
     float: left;
     padding: 10px;
-    width: 80%;
+    width: 90%;
     background-color: rgb(70, 186, 141);
     border: 5px solid rgb(40, 108, 82); 
     height: 100%;
@@ -116,7 +116,7 @@ button {
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    float: right;
+    float: center;
     border: 5px solid rgb(40, 108, 82);
 }
 
@@ -160,23 +160,32 @@ a {
     transition: max-height 0.2s ease-out;
   }
 
+.notebook {
+    font-weight: bold;
+    color: rgb(40, 108, 82);
+    text-align: center;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    float: right;
+  }
+
   .planner {
     font-weight: bold;
     color: rgb(40, 108, 82);
     text-align: center;
     border: 5px solid rgb(40, 108, 82);
-    padding: 10px 20px;
+    padding: 10px 10px;
+    height: 100%;
   }
-
 
   .main {
     float: right;
     width: 90%;
   }
 
-
 @media (max-width: 600px) {
-    nav, article {
+    nav, article, notebook {
       width: 100%;
       height: auto;
     }

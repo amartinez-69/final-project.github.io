@@ -160,6 +160,15 @@ a {
     transition: max-height 0.2s ease-out;
   }
 
+  .planner {
+    font-weight: bold;
+    color: rgb(40, 108, 82);
+    text-align: center;
+    border: 5px solid rgb(40, 108, 82);
+    padding: 10px 20px;
+  }
+
+
 
 @media (max-width: 600px) {
     nav, article {

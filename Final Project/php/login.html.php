@@ -21,12 +21,21 @@
             <label for="password">Password:</label><br>
             <input type="text" id="password" name="password" value=""><br><br>
             <input type="submit" value="Submit"><br><br>
-            <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
           </form> 
 
           <button onclick="location.href='admin.html.php'"> Im an Admin</button>
 
+        <!-- login
 
+        if username Y but password N
+            •"Wrong Password"
+        if username N 
+            •"User not found"
+        if username Y and password Y
+            •sign in successfully
+    
+    
+    -->
 
     </body>
 </html>

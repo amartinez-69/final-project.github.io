@@ -34,6 +34,12 @@
         if username Y and password Y
             •sign in successfully
     
+
+            if user exists:
+                check password 
+                    if N: wrong password
+                    if Y: sign in
+            else: "user not found"
     
     -->
 

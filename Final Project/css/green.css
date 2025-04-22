@@ -83,8 +83,9 @@ article {
     padding: 10px;
     width: 90%;
     background-color: rgb(70, 186, 141);
-    border: 5px solid rgb(40, 108, 82); 
+    border: 1px solid rgb(40, 108, 82); 
     height: 100%;
+    border-radius: 25px;
 }
   
   /* Clear floats after the columns */
@@ -164,7 +165,7 @@ a {
     font-weight: bold;
     color: rgb(40, 108, 82);
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px;
     height: 100%;
     width: 100%;
     float: right;
@@ -174,8 +175,8 @@ a {
     font-weight: bold;
     color: rgb(40, 108, 82);
     text-align: center;
-    border: 5px solid rgb(40, 108, 82);
-    padding: 10px 10px;
+    border: 1px solid rgb(40, 108, 82);
+    padding: 10px;
     height: 100%;
   }
 

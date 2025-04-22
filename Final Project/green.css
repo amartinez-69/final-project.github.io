@@ -83,7 +83,7 @@ article {
     padding: 10px;
     width: 90%;
     background-color: rgb(70, 186, 141);
-    border: 1px solid rgb(40, 108, 82); 
+    border: 5px solid rgb(40, 108, 82); 
     height: 100%;
     border-radius: 25px;
 }
@@ -175,7 +175,7 @@ a {
     font-weight: bold;
     color: rgb(40, 108, 82);
     text-align: center;
-    border: 1px solid rgb(40, 108, 82);
+    border: 3px solid rgb(40, 108, 82);
     padding: 10px;
     height: 100%;
   }

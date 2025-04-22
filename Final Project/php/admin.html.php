@@ -1,6 +1,6 @@
 <html>
     <head>
-
+    <link rel="stylesheet" href="../css/green.css">
     </head>
     <body>
         <h2>Administrator's Page</h2>

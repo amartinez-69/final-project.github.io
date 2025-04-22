@@ -1,4 +1,7 @@
 <html>
+<link rel="stylesheet" href="../css/green.css">
+
+
 <h2>Welcome <?php echo $_POST["username"]; ?></h2><br>
 
 <h2>Your password is: <?php echo $_POST["password"]; ?></h2><br>

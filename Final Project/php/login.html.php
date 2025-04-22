@@ -1,6 +1,7 @@
 
 <html>
     <head>
+        <link rel="stylesheet" href="../css/green.css">
         <?php function extractFolderNumber($path){
             $folderName = basename(realpath($path));
             if (preg_match('/(\d+)$/', $folderName, $matches)) {

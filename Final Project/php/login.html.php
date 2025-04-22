@@ -14,7 +14,7 @@
     </head>
     <body>
 
-         <form action="./savedUsers.php" method="POST">
+         <form action="savedUsers.php" method="POST">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" value=""><br>
             <label for="password">Password:</label><br>

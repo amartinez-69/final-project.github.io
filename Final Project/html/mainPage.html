@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>quickjot</title>
-<link rel="stylesheet" href="../css/green.css">
+<link rel="stylesheet" href="../green.css">
 </head>
 <body>
 
@@ -17,15 +17,36 @@
 <section> 
 <nav>
     <ul>
-        <li><a href="folders.html">folders</a></li>
-        <li><a href="habitTracker.html">habit tracker</a></li>
+        <li class="navbar"><a href="folders.html">folders</a></li>
+        <li class="navbar"><a href="habitTracker.html">habit tracker</a></li>
     </ul>
 </nav>
 
 <article>
     <p> test </p>
     <div class="notebook" style="float: left; width: 50%;">
-        <p>monday</p>
+        <h2>monday</h2>
+        <div>
+            <div class="planner" style="float: left; width: 50%;">
+                <div id="myDIV" class="todoheader">
+                    <input type="text" id="myInput" placeholder="Title...">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul id="myUL">
+                    <li>Hit the gym</li>
+                    <li class="checked">Pay bills</li>
+                    <li>Meet George</li>
+                    <li>Buy eggs</li>
+                    <li>Read a book</li>
+                    <li>Organize office</li>
+                  </ul>
+            </div>
+            <div class="planner" style="float: right; width: 50%;">
+                <p>boop</p>
+            </div>
+        </div>
+        <h2>tuesday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
                 <p>boop</p>
@@ -34,7 +55,7 @@
                 <p>boop</p>
             </div>
         </div>
-        <p>tuesday</p>
+        <h2>wednesday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
                 <p>boop</p>
@@ -43,16 +64,7 @@
                 <p>boop</p>
             </div>
         </div>
-        <p>wednesday</p>
-        <div>
-            <div class="planner" style="float: left; width: 50%;">
-                <p>boop</p>
-            </div>
-            <div class="planner" style="float: right; width: 50%;">
-                <p>boop</p>
-            </div>
-        </div>
-        <p>thursday</p>
+        <h2>thursday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
                 <p>boop</p>
@@ -64,7 +76,7 @@
 
     </div>
     <div class="notebook" style="float: left; width: 50%;">
-        <p>friday</p>
+        <h2>friday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
                 <p>boop</p>
@@ -73,7 +85,7 @@
                 <p>boop</p>
             </div>
         </div>
-        <p>Saturday</p>
+        <h2>saturday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%; height: 100px;">
                 <p>boop</p>
@@ -82,7 +94,7 @@
                 <p>boop</p>
             </div>
         </div>
-        <p>Sunday</p>
+        <h2>sunday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%; height: 100px;">
                 <p>boop</p>
@@ -93,6 +105,8 @@
         </div>
     </div>
 </article>
+
+<script src="../js/todo.js"></script>
 </section>
 
 

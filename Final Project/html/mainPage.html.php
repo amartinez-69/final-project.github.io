@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +14,7 @@
 <body>
 
 <section>
-<h1 stye="float: left;">quickjot</h1>
-<p>
-    <button><a href="../php/login.html.php">Login</a></button>
-    <button><a href="../php/signup.html.php">Sign Up</a></button>
-</p>
+<h1 style="float: center;">quickjot</h1>
 </section>
 
 <section> 
@@ -28,24 +31,24 @@
         <h2>monday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
 
             <div class="planner" style="float: right; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                   </ul>
             </div>
@@ -55,24 +58,24 @@
         <h2>tuesday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
 
             <div class="planner" style="float: right; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                   </ul>
             </div>
         </div>
@@ -81,23 +84,23 @@
         <h2>wednesday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Wozq board meeting</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
             <div class="planner" style="float: right; width: 50%;">
                 <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">send email</li>
                   </ul>
             </div>
@@ -106,23 +109,23 @@
         <h2>thursday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
             <div class="planner" style="float: right; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                   </ul>
             </div>
             </div>
@@ -133,23 +136,23 @@
         <h2>friday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
             <div class="planner" style="float: right; width: 50%;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                   </ul>
             </div>
             </div>
@@ -157,23 +160,23 @@
         <h2>saturday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%; height: 100px;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
             <div class="planner" style="float: right; width: 50%; height: 100px;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                   </ul>
             </div>
             </div>
@@ -181,23 +184,23 @@
         <h2>sunday</h2>
         <div>
             <div class="planner" style="float: left; width: 50%; height: 100px;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="scheduled events">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                     <li class="todo">Hit the gym</li>
                     <li class="todo">Pay bills</li>
                   </ul>
             </div>
             <div class="planner" style="float: right; width: 50%; height: 100px;">
-                <div id="myDIV" class="todoheader">
-                    <input type="text" id="myInput" placeholder="to dos for today">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to dos for today">
                     <span onclick="newElement()" class="addBtn">Add</span>
                   </div>
                   <br>
-                  <ul id="myUL">
+                  <ul class="myUL">
                   </ul>
             </div>
             </div>

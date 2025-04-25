@@ -1,56 +1,53 @@
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByClassName("todo");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const planners = document.querySelectorAll(".planner");
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.getElementById("myUL");
-list.addEventListener('click', function(ev) {
-  if (ev.target.className === 'todo') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+  planners.forEach(planner => {
+    const input = planner.querySelector(".todo-input");
+    const ul = planner.querySelector(".myUL");
+    const addBtn = planner.querySelector(".addBtn");
 
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.className="todo";
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
+    // Add click event to "Add" button
+    addBtn.addEventListener("click", () => {
+      const inputValue = input.value.trim();
+      if (!inputValue) {
+        alert("You must write something!");
+        return;
+      }
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
+      const li = document.createElement("li");
+      li.className = "todo";
+      li.textContent = inputValue;
 
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
+      // Add close button
+      const span = document.createElement("SPAN");
+      span.className = "close";
+      span.textContent = "\u00D7";
+      li.appendChild(span);
+
+      ul.appendChild(li);
+      input.value = "";
+
+      // Close button action
+      span.onclick = () => li.style.display = "none";
+    });
+
+    // Check off item on click
+    ul.addEventListener("click", ev => {
+      if (ev.target.classList.contains("todo")) {
+        ev.target.classList.toggle("checked");
+      }
+    });
+
+    // Initialize existing items with close buttons
+    const existingItems = ul.querySelectorAll("li");
+    existingItems.forEach(item => {
+      const span = document.createElement("SPAN");
+      span.className = "close";
+      span.textContent = "\u00D7";
+      item.appendChild(span);
+      span.onclick = () => item.style.display = "none";
+    });
+  });
+});
+

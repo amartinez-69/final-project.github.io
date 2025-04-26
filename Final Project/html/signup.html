@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>Sign Up</title></head>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../green.css">
+</head>
 <body>
-<h2>Sign Up</h2>
+<h1>Sign Up</h1>
+<div class="center">
 <form action="../php/register.php" method="POST">
-    Username: <input type="text" name="username" required><br>
-    Password: <input type="password" name="password" required><br>
-    <input type="submit" value="Sign Up">
+    <label for="username">Username: </label><br>
+    <input type="text" name="username" required><br>
+    <label for="password">Password: </label><br>
+    <input type="text" name="password" required><br>
+    <input type="submit" value="Sign Up"><br>
 </form>
+</div>
 </body>
 </html>

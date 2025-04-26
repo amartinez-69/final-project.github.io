@@ -32,10 +32,16 @@ p {
     text-align: center;
 }
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto; /* or any width you prefer */
+    padding: 20px;
+    width: 300px;
+    align-items: center;
+    border: 3px solid black; /* optional */
+    border-radius: 8px; 
 }
 .header {
     background-color: rgb(163, 231, 205);
@@ -333,6 +339,31 @@ input {
 .folder-name {
   font-size: 14px;
   margin-top: 5px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
 /* Pink cozy colors:

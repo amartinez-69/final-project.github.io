@@ -25,7 +25,180 @@ if (!isset($_SESSION['user'])) {
     </ul>
 </nav>
 
+
 <article>
+<table>
+    <tr>
+        <th>monday</th>
+        <th>♡︎</th>
+        <th>friday</th>
+        <th>♡︎</th>
+    </tr>
+    <tr>
+      <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+            <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+    </tr>
+    <tr>
+        <th>tuesday</th>
+        <th>♡︎</th>
+        <th>saturday</th>
+        <th>♡︎</th>
+    </tr>
+    <tr>
+    <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+            <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+    </tr>
+    <tr>
+        <th>wednesday</th>
+        <th>♡︎</th>
+        <th>sunday</th>
+        <th>♡︎</th>
+    </tr>
+    <tr>
+    <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+            <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+    </tr>
+    <tr>
+        <th>thursday</t>
+        <th>♡︎</th>
+        <th>♡︎</th>
+        <th>♡︎</th>
+    </tr>
+    <tr>
+    <th>  <div>
+            <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="scheduled events">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th> <div class="planner">
+                <div class="todoheader">
+                    <input type="text" class="todo-input" placeholder="to-dos">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  <br>
+                  <ul class="myUL">
+                  </ul>
+            </div></th>
+      <th>♡︎</th>
+      <th>♡︎</th>
+    </tr>
+</table>
+</article>
+
+<!-- <article>
     <p> test </p>
     <div class="notebook" style="float: left; width: 50%;">
         <h2>monday</h2>
@@ -206,7 +379,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
-</article>
+</article> -->
 
 <script src="../js/todo.js"></script>
 </section>

@@ -3,8 +3,8 @@
 }
 
 
-table, th, tr {
-  background-color: whitesmoke;
+th, tr {
+  background-color: #f6eee3;
   border:5px solid rgb(40, 108, 82);
   align-self: center;
   font-size: 20px;
@@ -273,7 +273,7 @@ ul li.checked::before {
 
 /* Style the header */
 .todoheader {
-  background-color: #3daf58;
+  background-color: #9fd0b8;
   color: white;
   text-align: center;
 }
@@ -364,7 +364,7 @@ input[type=text], select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #5d825e;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -374,7 +374,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #4e5a4f;
 }
 
 /* Pink cozy colors:

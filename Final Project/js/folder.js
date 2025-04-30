@@ -1,3 +1,11 @@
+window.onload = function () {
+  const savedFolders = JSON.parse(localStorage.getItem("folder")) || [];
+  savedFolders.forEach((folder, index) => {
+    createFolderElement(folder.name, folder.contents, index);
+  });
+};
+
+//FIX
 function addFolder(){
     const name = prompt("Enter folder name:");
     // const color= 
@@ -20,6 +28,19 @@ function addFolder(){
   container.appendChild(folderDiv);
 }
 }
+
+
+function createFolderElement(name, contents, index) {
+  const container = document.getElementById('folderContainer');
+  const folderDiv = document.createElement('div');
+  folderDiv.className = 'folder';
+  folderDiv.dataset.index = index;
+
+  renderFolder(folderDiv, name, contents);
+  container.appendChild(folderDiv);
+}
+
+
 
 //doesnt work yet:
 function randomizeColor(){

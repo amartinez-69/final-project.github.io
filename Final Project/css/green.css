@@ -81,6 +81,10 @@ nav {
     color: rgb(43, 108, 83);
   }
 
+  .todo{
+    background-color: white;
+  }
+
 
 article {
     float: left;

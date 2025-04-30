@@ -328,11 +328,11 @@ input {
 }
 
 .folder-icon:hover .folder-tab {
-  fill: #fcd028;
+  fill: #FC5464;
 }
 
 .folder-icon:hover .folder-body {
-  fill: #ffe680;
+  fill: #FC5464;
 }
 
 .folder-container {

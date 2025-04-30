@@ -62,6 +62,7 @@ $currentUser = $users[$currentUserIndex];
 <head>
     <title>Profile</title>
     <link rel="stylesheet" href="../green.css">
+    <a href="mainPage.html.php"><b>back to planner</b></a>
 </head>
 <body>
 <h1>Profile Settings</h1>

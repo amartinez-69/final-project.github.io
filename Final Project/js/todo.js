@@ -11,52 +11,66 @@ document.addEventListener("DOMContentLoaded", function () {
     const day = table ? table.querySelector("th").textContent.trim().toLowerCase() : "unknown";
     const key = `${day}-${type}`;
 
-    // Load saved items
-    const savedItems = JSON.parse(localStorage.getItem(key)) || [];
-    savedItems.forEach(item => {
-      createListItem(item, ul, savedItems, key);
-    });
+    let savedItems = JSON.parse(localStorage.getItem(key)) || [];
 
-    // Add new item
+    function saveToLocal() {
+      localStorage.setItem(key, JSON.stringify(savedItems));
+    }
+
+    function renderList() {
+      ul.innerHTML = "";
+      savedItems.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "todo";
+
+        if (item.checked) {
+          li.classList.add("checked");
+        }
+
+        // Text node
+        const textNode = document.createTextNode(item.text);
+        li.appendChild(textNode);
+
+        // Close button
+        const span = document.createElement("span");
+        span.className = "close";
+        span.textContent = "\u00D7";
+        span.onclick = function (e) {
+          e.stopPropagation(); // prevent toggle
+          savedItems.splice(index, 1);
+          saveToLocal();
+          renderList();
+        };
+        li.appendChild(span);
+
+        // Toggle checked
+        li.addEventListener("click", function () {
+          item.checked = !item.checked;
+          saveToLocal();
+          renderList();
+        });
+
+        ul.appendChild(li);
+      });
+    }
+
     addBtn.addEventListener("click", () => {
       const inputValue = input.value.trim();
       if (!inputValue) {
         alert("You must write something!");
         return;
       }
-      savedItems.push(inputValue);
-      localStorage.setItem(key, JSON.stringify(savedItems));
-      createListItem(inputValue, ul, savedItems, key);
+
+      const newItem = { text: inputValue, checked: false };
+      savedItems.push(newItem);
+      saveToLocal();
       input.value = "";
+      renderList();
     });
+
+    renderList(); // load on page load
   });
-
-  function createListItem(text, ul, savedItems, key) {
-    const li = document.createElement("li");
-    li.className = "todo";
-    li.textContent = text;
-
-    // Close button
-    const span = document.createElement("SPAN");
-    span.className = "close";
-    span.textContent = "\u00D7";
-    span.onclick = function () {
-      ul.removeChild(li);
-      const index = savedItems.indexOf(text);
-      if (index > -1) {
-        savedItems.splice(index, 1);
-        localStorage.setItem(key, JSON.stringify(savedItems));
-      }
-    };
-
-    li.appendChild(span);
-    ul.appendChild(li);
-
-    // Toggle checked
-    li.addEventListener("click", () => {
-      li.classList.toggle("checked");
-    });
-  }
 });
+
 
 

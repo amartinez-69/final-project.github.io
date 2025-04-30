@@ -47,11 +47,11 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto; /* or any width you prefer */
+    margin: auto;
     padding: 20px;
     width: 300px;
     align-items: center;
-    border: 3px solid black; /* optional */
+    border: 3px solid black; 
     border-radius: 8px; 
 }
 .header {
@@ -90,6 +90,10 @@ nav {
 .navbar:hover {
     background-color: rgb(104, 223, 177);
     color: rgb(43, 108, 83);
+  }
+
+  .todo{
+    background-color: white;
   }
 
 
@@ -217,7 +221,7 @@ ul {
 ul li {
   cursor: pointer;
   position: relative;
-  background: #eee;
+  background: rgb(66, 176, 141);
   font-size: 14px;
   transition: 0.2s;
 
@@ -228,10 +232,6 @@ ul li {
   user-select: none;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
 
 /* Darker background-color on hover */
 ul li:hover {

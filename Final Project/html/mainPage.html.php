@@ -15,11 +15,13 @@ if (!isset($_SESSION['user'])) {
 
 <section>
 <h1 style="float: center;">quickjot</h1>
+
 </section>
 
 <section> 
 <nav>
     <ul>
+        <li class="navbar"><a href="profile.html.php">profile</a></li>
         <li class="navbar"><a href="folders.html">folders</a></li>
         <li class="navbar"><a href="habitTracker.html">habit tracker</a></li>
     </ul>
@@ -27,6 +29,7 @@ if (!isset($_SESSION['user'])) {
 
 
 <article>
+
 <table>
     <tr>
         <th class="day-header">monday</th>

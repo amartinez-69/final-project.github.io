@@ -29,6 +29,7 @@ if (!isset($_SESSION['user'])) {
 
 
 <article>
+<button onclick="savePlannerData()">Save Planner</button>
 
 <table>
     <tr>

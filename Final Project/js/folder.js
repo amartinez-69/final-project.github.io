@@ -15,6 +15,21 @@ function addFolder() {
   localStorage.setItem("folders", JSON.stringify(savedFolders));
 
   createFolderElement(name, savedFolders.length - 1);
+
+  fetch('../php/save_folders.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ folderName: name })
+  })
+  .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        console.log(`Created JSON for folder: ${name}`);
+      } else {
+        console.error(data.error || 'Unknown error');
+      }
+    })
+    .catch(error => console.error('Error creating folder JSON:', error));
 }
 
 function createFolderElement(name, index) {
@@ -32,18 +47,6 @@ function createFolderElement(name, index) {
   `;
   container.appendChild(folderDiv);
 }
-
-
-// function createFolderElement(name, contents, index) {
-//   const container = document.getElementById('folderContainer');
-//   const folderDiv = document.createElement('div');
-//   folderDiv.className = 'folder';
-//   folderDiv.dataset.index = index;
-
-//   renderFolder(folderDiv, name, contents);
-//   container.appendChild(folderDiv);
-// }
-
 
 
 //doesnt work yet:

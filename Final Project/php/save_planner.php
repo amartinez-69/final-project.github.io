@@ -16,11 +16,11 @@ if (!$data) {
     exit();
 }
 
-$filename = "user_data/" . basename($user) . "_planner.json";
+$filename = "../output/user_data/" . basename($user) . "_planner.json";
 
 // Make sure the directory exists
-if (!file_exists("user_data")) {
-    mkdir("user_data", 0777, true);
+if (!file_exists("../output/user_data")) {
+    mkdir("../output/user_data", 0777, true);
 }
 
 // Save JSON

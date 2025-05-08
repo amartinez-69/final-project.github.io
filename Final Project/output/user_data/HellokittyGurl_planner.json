@@ -1,6 +1,7 @@
 {
     "monday": {
         "scheduled": [
+            "hello\u00d7",
             "hello\u00d7"
         ],
         "todos": []

@@ -1,0 +1,36 @@
+{
+    "monday": {
+        "scheduled": [
+            "hello\u00d7"
+        ],
+        "todos": []
+    },
+    "tuesday": {
+        "scheduled": [],
+        "todos": []
+    },
+    "wednesday": {
+        "scheduled": [],
+        "todos": []
+    },
+    "thursday": {
+        "scheduled": [
+            "pack\u00d7",
+            "therapy\u00d7",
+            "zoom meeting\u00d7"
+        ],
+        "todos": []
+    },
+    "friday": {
+        "scheduled": [],
+        "todos": []
+    },
+    "saturday": {
+        "scheduled": [],
+        "todos": []
+    },
+    "sunday": {
+        "scheduled": [],
+        "todos": []
+    }
+}

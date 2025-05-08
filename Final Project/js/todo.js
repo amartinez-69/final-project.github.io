@@ -72,21 +72,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 function savePlannerData() {
   const plannerData = {};
-  const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+  const tables = document.querySelectorAll("table");
 
-  days.forEach(day => {
-      const scheduled = document.querySelectorAll(`table:has(.day-header:contains(${day})) .planner:nth-of-type(1) .myUL li`);
-      const todos = document.querySelectorAll(`table:has(.day-header:contains(${day})) .planner:nth-of-type(2) .myUL li`);
+  tables.forEach((table) => {
+      const dayHeader = table.querySelector(".day-header");
+      if (!dayHeader) return;
 
-      plannerData[day] = {
-          scheduled: Array.from(scheduled).map(li => li.textContent.trim()),
-          todos: Array.from(todos).map(li => li.textContent.trim())
-      };
+      const day = dayHeader.textContent.trim().toLowerCase();
+
+      const planners = table.querySelectorAll(".planner");
+
+      if (planners.length >= 2) {
+          const scheduledItems = planners[0].querySelectorAll("li");
+          const todoItems = planners[1].querySelectorAll("li");
+
+          plannerData[day] = {
+              scheduled: Array.from(scheduledItems).map(li => li.textContent.trim()),
+              todos: Array.from(todoItems).map(li => li.textContent.trim())
+          };
+      }
   });
 
-  fetch('php/save_planner.php', {
+  fetch('../php/save_planner.php', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(plannerData)

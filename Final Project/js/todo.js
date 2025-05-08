@@ -72,5 +72,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function savePlannerData() {
+  const plannerData = {};
+  const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+
+  days.forEach(day => {
+      const scheduled = document.querySelectorAll(`table:has(.day-header:contains(${day})) .planner:nth-of-type(1) .myUL li`);
+      const todos = document.querySelectorAll(`table:has(.day-header:contains(${day})) .planner:nth-of-type(2) .myUL li`);
+
+      plannerData[day] = {
+          scheduled: Array.from(scheduled).map(li => li.textContent.trim()),
+          todos: Array.from(todos).map(li => li.textContent.trim())
+      };
+  });
+
+  fetch('php/save_planner.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(plannerData)
+  }).then(response => response.json())
+    .then(data => alert("Planner saved!"))
+    .catch(error => console.error('Error:', error));
+}
+
 
 

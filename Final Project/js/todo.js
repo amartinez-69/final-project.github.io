@@ -105,5 +105,63 @@ function savePlannerData() {
     .catch(error => console.error('Error:', error));
 }
 
+document.addEventListener("DOMContentLoaded", async function () {
+  const response = await fetch("../php/load_planner.php");
+  const serverData = await response.json();
+
+  const planners = document.querySelectorAll(".planner");
+
+  planners.forEach(planner => {
+    const input = planner.querySelector(".todo-input");
+    const ul = planner.querySelector(".myUL");
+    const addBtn = planner.querySelector(".addBtn");
+
+    const type = input.placeholder.includes("event") ? "scheduled" : "todos";
+    const table = planner.closest("table");
+    const day = table ? table.querySelector(".day-header").textContent.trim().toLowerCase() : "unknown";
+
+    let savedItems = serverData[day]?.[type] || [];
+
+    function renderList() {
+      ul.innerHTML = "";
+      savedItems.forEach((itemText, index) => {
+        const li = document.createElement("li");
+        li.className = "todo";
+        li.textContent = itemText;
+
+        const span = document.createElement("span");
+        span.className = "close";
+        span.textContent = "\u00D7";
+        span.onclick = function (e) {
+          e.stopPropagation();
+          savedItems.splice(index, 1);
+          renderList();
+        };
+        li.appendChild(span);
+
+        li.addEventListener("click", function () {
+          li.classList.toggle("checked");
+        });
+
+        ul.appendChild(li);
+      });
+    }
+
+    addBtn.addEventListener("click", () => {
+      const inputValue = input.value.trim();
+      if (!inputValue) {
+        alert("You must write something!");
+        return;
+      }
+
+      savedItems.push(inputValue);
+      input.value = "";
+      renderList();
+    });
+
+    renderList();
+  });
+});
+
 
 

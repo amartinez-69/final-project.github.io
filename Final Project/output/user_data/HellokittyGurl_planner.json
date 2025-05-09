@@ -1,13 +1,16 @@
 {
     "monday": {
         "scheduled": [
-            "hello\u00d7",
-            "hello\u00d7"
+            "go to class\u00d7"
         ],
-        "todos": []
+        "todos": [
+            "work on project\u00d7"
+        ]
     },
     "tuesday": {
-        "scheduled": [],
+        "scheduled": [
+            "go to class\u00d7"
+        ],
         "todos": []
     },
     "wednesday": {
@@ -15,11 +18,7 @@
         "todos": []
     },
     "thursday": {
-        "scheduled": [
-            "pack\u00d7",
-            "therapy\u00d7",
-            "zoom meeting\u00d7"
-        ],
+        "scheduled": [],
         "todos": []
     },
     "friday": {
@@ -32,6 +31,8 @@
     },
     "sunday": {
         "scheduled": [],
-        "todos": []
+        "todos": [
+            "move night\u00d7"
+        ]
     }
 }

@@ -1,5 +1,5 @@
 window.onload = function () {
-  fetch('../php/load_folders.php')
+  fetch('../php/load_folders.php') //same logic as the planner data saving 
     .then(response => response.json())
     .then(data => {
       if (data.folders && Array.isArray(data.folders)) {

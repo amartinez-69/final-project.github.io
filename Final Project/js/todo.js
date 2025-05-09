@@ -105,7 +105,8 @@ function savePlannerData() {
     .catch(error => console.error('Error:', error));
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
+//fetches saved data, the load_planner,php page looks for saved user data JSON created by saved_planner.php and loads the data (renders list) saved in the JSON file
+document.addEventListener("DOMContentLoaded", async function () { //https://stackoverflow.com/questions/14236296/asynchronous-function-call-in-php
   const response = await fetch("../php/load_planner.php");
   const serverData = await response.json();
 

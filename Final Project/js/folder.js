@@ -1,8 +1,23 @@
 window.onload = function () {
-  const savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
-  savedFolders.forEach((folder, index) => {
-      createFolderElement(folder.name, index);
-  });
+  fetch('../php/load_folders.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.folders && Array.isArray(data.folders)) {
+        localStorage.setItem("folders", JSON.stringify(data.folders));
+        data.folders.forEach((folder, index) => {
+          createFolderElement(folder.name, index);
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Couldn't load folders from server:", error);
+
+      // fallback to localStorage
+      const savedFolders = JSON.parse(localStorage.getItem("folders")) || [];
+      savedFolders.forEach((folder, index) => {
+        createFolderElement(folder.name, index);
+      });
+    });
 };
 
 function addFolder() {
@@ -16,21 +31,23 @@ function addFolder() {
 
   createFolderElement(name, savedFolders.length - 1);
 
+  // Send the updated folders list to the server
   fetch('../php/save_folders.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ folderName: name })
+    body: JSON.stringify({ folders: savedFolders })
   })
   .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        console.log(`Created JSON for folder: ${name}`);
-      } else {
-        console.error(data.error || 'Unknown error');
-      }
-    })
-    .catch(error => console.error('Error creating folder JSON:', error));
+  .then(data => {
+    if (data.success) {
+      console.log("Folder list saved on server.");
+    } else {
+      console.error(data.error || 'Unknown error');
+    }
+  })
+  .catch(error => console.error('Error saving folders:', error));
 }
+
 
 function createFolderElement(name, index) {
   const container = document.getElementById('folderContainer');

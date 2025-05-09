@@ -8,9 +8,7 @@
         ]
     },
     "tuesday": {
-        "scheduled": [
-            "go to class\u00d7"
-        ],
+        "scheduled": [],
         "todos": []
     },
     "wednesday": {

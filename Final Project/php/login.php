@@ -8,7 +8,11 @@ $password = $_POST['password'];
 $users = json_decode(file_get_contents($file), true);
 
 foreach ($users as $user) {
-    if ($user['username'] === $username && $user['password'] === $password) {
+    if ($user['username'] === "admin" && $user['password'] === 'admin') {
+        $_SESSION['user'] = $username;
+        header("Location: ../html/admin.html.php");
+        exit();
+    }else if ($user['username'] === $username && $user['password'] === $password) {
         $_SESSION['user'] = $username;
         header("Location: ../html/mainPage.html.php");
         exit();
